@@ -1,6 +1,6 @@
 import asyncio
 import logging
-
+import red
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message
@@ -12,7 +12,7 @@ TOKEN = f.readline()
 # All handlers should be attached to the Router (or Dispatcher)
 bot = Bot(TOKEN)
 dp = Dispatcher()
-helptext='доступные команды : /help, /start, /снилс \n(снилс вводится по следущему типу: 999-999-999 99 )'
+helptext='доступные команды : \n/start \n/снилс (ваш снилс), данная команда позволяет узнать поступили ли вы в пгниу в этом году и куда  \n(снилс вводится по следущему типу: 999-999-999 99 )'
 
 @dp.message(Command('start'))
 async def command_start_handler(message: Message) -> None:
