@@ -12,7 +12,7 @@ TOKEN = f.readline()
 # All handlers should be attached to the Router (or Dispatcher)
 bot = Bot(TOKEN)
 dp = Dispatcher()
-helptext='доступные команды : \n/start \n/снилс (ваш снилс), данная команда позволяет узнать поступили ли вы в пгниу в этом году и куда  \n(снилс вводится по следущему типу: 999-999-999 99 )'
+helptext='доступные команды : \n/start \n/s (ваш снилс), данная команда позволяет узнать поступили ли вы в пгниу в этом году и куда  \n(снилс вводится по следущему типу: 999-999-999 99 )'
 
 @dp.message(Command('start'))
 async def command_start_handler(message: Message) -> None:
@@ -27,7 +27,7 @@ async def command_help_handler(message: Message) -> None:
 
 
 
-@dp.message(Command('снилс'))
+@dp.message(Command('s'))
 async def command_give_snils_handler(message: Message, command:CommandObject) -> None:
     sl=command.args
     if command.args is None:
